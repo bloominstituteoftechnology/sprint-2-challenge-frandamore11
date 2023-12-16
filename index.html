@@ -7,12 +7,146 @@
     // 👉 CHALLENGE 1
     function profileActivation(profile, reason) {
 
+      let obj = {
+        active: '',
+        reason: ''
+      }
+      
+      if (profile.active === true && reason === undefined) {
+        delete obj.active;
+        obj.reason = 'confirm status manually'
+        return obj.reason
+
+      } else if (profile.active === true && typeof reason === 'string') {
+        obj.reason = reason
+        obj.active = false
+        return obj
+      } else {
+        obj.active = true
+        delete obj.reason // not sure if this is trully solving the problem. 
+        return obj
+      }
+
     }
+
+
 
     // 👉 CHALLENGE 2
     function mineSweeper(grid, x, y) {
 
-    }
+      if ((x -1 < 0 ||  x -1 > 2) || (y -1 < 0 || y -1 > 2)) {
+        return 'invalid coordinates'
+
+      } else if (x === 1 && y ===1) {
+
+        let emoji = ''
+        if (grid[0][0] === "🟦") {
+          emoji = " 🥳"
+        } else {
+          emoji = " 💀"
+        }
+        return grid[0][0] + `${emoji}`
+
+      } else if (x === 2 && y ===1) {
+        let emoji = ''
+        if (grid[0][1] === "🟦") {
+          emoji = " 🥳"
+        } else {
+          emoji = " 💀"
+        }
+        return grid[0][1] +  `${emoji}`
+        
+      } else if (x === 3 && y ===1) {
+
+        let emoji = ''
+        if (grid[0][2] === "🟦") {
+          emoji = " 🥳"
+        } else {
+          emoji = " 💀"
+        }
+        return grid[0][2] +  `${emoji}`
+
+      } else if (x === 1 && y ===2) {
+
+        let emoji = ''
+        if (grid[1][0] === "🟦") {
+          emoji = " 🥳"
+        } else {
+          emoji = " 💀"
+        }
+        return grid[1][0] +  `${emoji}`
+
+      } else if (x === 2 && y ===2) {
+
+        let emoji = ''
+        if (grid[1][1] === "🟦") {
+          emoji = " 🥳"
+        } else {
+          emoji = " 💀"
+        }
+        return grid[1][1] +  `${emoji}`
+
+      } else if (x === 3 && y ===2) {
+
+        let emoji = ''
+        if (grid[1][2] === "🟦") {
+          emoji = " 🥳"
+        } else {
+          emoji = " 💀"
+        }
+        return grid[1][2] +  `${emoji}`
+
+      } else if (x === 1 && y === 3) {
+
+        let emoji = ''
+        if (grid[2][0] === "🟦") {
+          emoji = " 🥳"
+        } else {
+          emoji = " 💀"
+        }
+        return grid[2][0] +  `${emoji}`
+
+      } else if (x === 2 && y === 3) {
+
+        let emoji = ''
+        if (grid[2][1] === "🟦") {
+          emoji = " 🥳"
+        } else {
+          emoji = " 💀"
+        }
+        return grid[2][1] +  `${emoji}`
+
+      } else if (x === 3 && y === 3) {
+
+        let emoji = ''
+        if (grid[2][2] === "🟦") {
+          emoji = " 🥳"
+        } else {
+          emoji = " 💀"
+        }
+        return grid[2][2] +  `${emoji}`
+
+      }     
+      
+      } 
+      
+      // else if (x === 2 & y === 1) { 
+      //   return "🟥 💀"
+      // } else if (x === 3 & y === 1) { 
+      //   return "🟥 💀"
+      // } else if (x === 1 & y === 2) { 
+      //   return "🟥 💀"
+      // } else if (x === 2 & y === 2) { 
+      //   return "🟦 🥳"
+      // } else if (x === 3 & y === 2) { 
+      //   return "🟥 💀"
+      // } else if (x === 1 & y === 3) { 
+      //   return "🟥 💀"
+      // } else if (x === 2 & y === 3) { 
+      //   return "🟦 🥳"
+      // } else if (x === 3 & y === 3) { 
+      //   return "🟦 🥳"
+      // }
 
     // 👉 CHALLENGE 3
     function booleanize(obj) {
