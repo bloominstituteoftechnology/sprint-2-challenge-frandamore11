@@ -55,7 +55,7 @@
           emoji = " 💀"
         }
         return grid[0][1] +  `${emoji}`
-        
+
       } else if (x === 3 && y ===1) {
 
         let emoji = ''
@@ -150,6 +150,23 @@
 
     // 👉 CHALLENGE 3
     function booleanize(obj) {
+
+      for (i in obj) {
+
+        if (obj[i] === null) {
+          delete obj[i]
+        } else if (i.length > 9) {
+          return "shorten all prop names to 9 chars or less"
+        }
+        else if(obj[i] === 0) {
+          obj[i] = false
+        } else if (obj[i] === 1) {
+          obj[i] = true
+        }
+
+      }
+
+      return obj
 
     }
 
