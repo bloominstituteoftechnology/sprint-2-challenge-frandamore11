@@ -172,8 +172,18 @@
 
     // 👉 CHALLENGE 4
     function scrub(text, forbidden) {
+  let words = text.split(' ');
 
+  for (let i = 0; i < words.length; i++) {
+    for (let j = 0; j < forbidden.length; j++) {
+      if (forbidden[j] === words[i]) {
+        words[i] = words[i].replace(/./g, "x");
+      }
     }
+  }
+
+  return words.join(' ');
+}
 
     // 👉 CHALLENGE 5 (bonus, NOT graded)
     function normalizePhoneNumber(num) {
